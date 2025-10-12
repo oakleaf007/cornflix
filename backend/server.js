@@ -63,7 +63,7 @@ app.use("/api/postmovie",uploadMovieRoute);
 
 app.use("/",express.static("frontend"));
 
-app.use("/", express.static(path.join(process.cwd(), "admin")));
+
 
  app.get("/", (req, res) => {
   res.sendFile(path.join(process.cwd(), "frontend","index.html"));
@@ -85,6 +85,8 @@ app.use("/", express.static(path.join(process.cwd(), "admin")));
   res.sendFile(path.join(process.cwd(), "frontend","signup.html"));
 });
 
+
+app.use("/adminx", express.static(path.join(process.cwd(), "admin")));
 
 
 app.get("/xadminx",(req, res)=>{
