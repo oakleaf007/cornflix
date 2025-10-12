@@ -1,0 +1,29 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "🍿 Cornflix - A Modern UI for Movie Lovers\r About The Project\r Cornflix is a frontend project that brings a sleek, modern, and intuitive movie browsing experience to life. Designed with a focus on clean aesthetics and user experience, this project demonstrates a responsive layout that looks great on any device, from mobile phones to desktop screens.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon backend/server.js",
+    "start": "nodemon backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oakleaf007/cornflix/issues"
+  },
+  "homepage": "https://github.com/oakleaf007/cornflix#readme",
+  "dependencies": {
+    "cloudinary": "^1.41.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.0",
+    "multer": "^2.0.2",
+    "multer-storage-cloudinary": "^4.0.0",
+    "nodemon": "^3.1.10"
+  }
+}

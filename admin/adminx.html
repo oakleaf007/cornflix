@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./admin.css">
+    <title>CF ADMINX</title>
+</head>
+<body>
+   
+    <header>
+        <div class="logo" >CORN FLIX  <span class="logo2" style="  font-weight: bold;
+    padding: 5px;
+    background: linear-gradient(90deg, #032541 0%,#0a3a64 100%);
+    letter-spacing: 1px;
+     font-size: 10px;
+    border: 1px solid lightslategrey;
+    color: #ffffff;" >ADMIN</span></div>
+       
+
+
+        <nav>
+            
+            <ul class="nav">
+               <li><a href="adminx-login.html">Sign out</a></li>
+                
+                <li><a href="admin-help.html">Help QNA</a></li>
+                
+            </ul>
+               <div class="ham" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+             <ul class="nav2">
+               <div class="list" > <a href="adminx-login.html">Sign out</a></div>
+                
+               
+                 <div class="list"><a href="admin-help.html">Go to HELP</a></div>
+                
+           
+            </ul>
+             
+   
+        </nav>
+     
+
+
+    </header>
+<main>
+<!-- Welcome -->
+
+
+
+ <div class="admin-panel">
+ <div class="section">
+  <!-- slider upload to cloud -->
+      <h3>Slider Upload to Cloudinary</h3>
+      <form id="banner-form"  enctype="multipart/form-data">
+        <label for="banner">Slider Image upload to cloudinary</label>
+        <input id="banner" type="file" id="banner" name="banner" accept="image/*">
+       
+         <!-- <input type="text" name="link" placeholder="Enter movie link" required> -->
+        <button type="submit">Upload Slider</button>
+      </form>
+       <div id="uploadstatus" style="padding: 10px;"></div>
+
+
+    </div>
+<!-- slider upload to the site via mongo -->
+       <div class="section">
+     
+        <h3>Slider Upload to my site</h3>
+
+      <form id="banner-link"  enctype="multipart/form-data">
+        <label for="banner">Slider Image retrival via mongodb with cloudinry</label>
+       
+        <label for="banner">enter banner Link</label>
+         <input id="link-input" type="text" name="link" placeholder="Enter slider link" required>
+        <label for="banner">enter Movie Link</label>
+        <input type="text" id="alink" name="alink" placeholder="Link for movie" />
+        <button type="submit">Upload Slider Link</button>
+      </form>
+            <div id="linkstatus" style="padding: 10px;"></div>
+
+            </div>
+
+<!-- Movie cover upload to cloud -->
+             <div class="section">
+      <h3>Upload Movie Cover to cloudinary</h3>
+      <form id="movie-cover"  enctype="multipart/form-data">
+       
+        <label for="cover">Movie Cover</label>
+        <input type="file" id="cover" name="cover" accept="image/*">
+     
+         <!-- <input type="text" name="link" placeholder="Enter movie link" required> -->
+        <button type="submit">Upload Movie cover</button>
+      </form>
+       <div id="cover-status" style="padding: 10px;"></div>
+
+
+    </div>
+
+<!-- Movie upload to cloud -->
+             <div class="section">
+      <h3>Upload Movie</h3>
+      <form id="movie-form"  enctype="multipart/form-data">
+        <label for="banner">Movie upload to cloudinary</label>
+        <input id="movie-file" type="file"  name="file" accept="video/*">
+       
+     
+         <!-- <input type="text" name="link" placeholder="Enter movie link" required> -->
+        <button type="submit">Upload Movie</button>
+      </form>
+       <div id="movie-status" style="padding: 10px;"></div>
+
+
+    </div>
+
+
+
+
+    <!-- Movie to mongo upload -->
+ <div class="section">
+      <h3>Movie Details</h3>
+      <form>
+        <label for="movieName">Movie Name</label>
+        <input type="text" id="movieName" name="movieName" placeholder="Enter movie name" required>
+
+             <label for="genre">Genre</label>
+        <select id="genre" name="genre" required>
+          <option value="">-- Select Genre --</option>
+          <option value="action">Action</option>
+          <option value="comedy">Comedy</option>
+          <option value="drama">Drama</option>
+          <option value="thriller">Thriller</option>
+          <option value="horror">Horror</option>
+          <option value="romance">Romance</option>
+          <option value="sci-fi">Sci-Fi</option>
+          <option value="fantasy">Fantasy</option>
+        </select>
+
+        <label for="movieDesc">Description</label>
+        <textarea id="movieDesc" name="movieDesc" placeholder="Enter description"></textarea>
+
+  <label for="movieDesc">Starring</label>
+        <textarea id="star" name="moviestar" placeholder="Enter star details"></textarea>
+
+        
+          <label for="movieDesc">Director</label>
+        <textarea id="movieDirector" name="movieDirector" placeholder="Enter director details"></textarea>
+
+          <label for="movieDesc">Release year</label>
+        <textarea id="release" name="movieDesc" placeholder="Enter Release year"></textarea>
+
+  <label for="movieDesc">language</label>
+        <textarea id="language" name="movieDesc" placeholder="Enter description"></textarea>  
+              
+         <label for="banner">Enter Movie Link</label>
+         <input id="movielink" type="text" name="link" placeholder="Enter movie link" required>
+         
+         <label for="banner">Enter Movie cover Link</label>
+         <input id="cover-link" type="text" name="link" placeholder="Enter cover link" required>
+
+        
+
+        <button type="submit">Upload Movie to the site</button>
+      </form>
+    </div>
+
+</div>
+
+
+
+<!-- slide -->
+<div class="slider-container">
+  <button class="btn prev">&#10094;</button>
+  <div class="slider" id="slider">
+    
+    <div class="slide" id="slide-template">
+      <a id="slide-a" href="" target="_blank">
+        <img id="banner-img" src="" alt="Not Available">
+      </a>
+    </div>
+
+
+  </div>
+  <button class="btn next">&#10095;</button>
+</div>
+
+<div id="label" style="padding: 10px; color: #fff; text-align: center;background: lightslategray; width: 98%; margin: 10px auto;">All slides links: deleting a link will delete a  slide</div>
+<div id="admin-banners" style="color:#fff; width: 90%; padding: 10px;">
+  <!-- Each banner will be added here -->
+</div>
+
+
+
+  <div id="label" style=" text-align: center; margin: 10px auto; width: 98%;"><a href="#" style="display: flex; background-color: lightslategray; padding: 15px; margin: 10px auto; text-align: left; color: #ffffff; border-radius:4px;">Trending</a></div>
+            <div class="movie-container" id="trend">
+                <div class="movie-card">
+                <a href="#" class="movie-link"> 
+                   <div class="poster">
+                    <img src="f4.png"></div>
+                    
+                    <p class="title">Frogcacacddcdvsvvvsvsvsvsfva</p>
+                    </a>
+                 </div>
+                 
+         
+          <div class="movie-card">
+                <a href="#" class="movie-link"> 
+                   <div class="poster">
+                    <img src="superman.png"></div>
+                    
+                    <p class="title">Frog</p>
+                    </a>
+                 </div>
+                 
+           
+          
+               
+            </div>
+              <div class="more">
+                <a href="#" class="more-link"> 
+                   <div class="more-poster">
+                    View All &#10095;
+                     </div>
+                    
+                
+                    </a>
+                 </div>
+            <!-- New releases -->
+
+   
+<div id="label" style=" text-align: center; margin: 10px auto;  width: 98%;"><a href="#" style="display: flex; background-color: lightslategray; padding: 15px; margin: 10px auto; text-align: left; color: #ffffff; border-radius:4px;">New Releases</a></div>
+            <div class="movie-container" id="foru">
+                <div class="movie-card">
+                <a href="#" class="movie-link"> 
+                   <div class="poster">
+                    <img src="profile.png"></div>
+                    
+                    <p class="title">Frogcacacddcdvsvvvsvsvsvsfva</p>
+                    </a>
+                 </div>
+                 
+         
+          <div class="movie-card">
+                <a href="#" class="movie-link"> 
+                   <div class="poster">
+                    <img src="profile.png"></div>
+                    
+                    <p class="title">Frog</p>
+                    </a>
+                 </div>
+                 
+                  <div class="movie-card">
+             <a href="#" class="movie-link">
+                 <div class="poster">
+                    <img src="profile.png"></div>
+                     <p class="title">Frog</p>
+                </a>
+         </div>
+               
+            </div>
+             <div class="more">
+                <a href="#" class="more-link"> 
+                   <div class="more-poster">
+                    View All &#10095;
+                     </div>
+                    
+                
+                    </a>
+                 </div>
+
+
+ 
+     <div class="QNA" style="padding: 10px; width: 300px; margin: 10px auto;">
+                <a href="admin-help.html" class="more-link" > 
+                   <div class="more-poster" style="background-color: #333;">
+                    Go to QNA &#10095;
+                     </div>
+                    
+                
+                    </a>
+                 </div>
+
+                  <div class="admin-panel">
+ <div class="section">
+    <h2>Update Contact Info</h2>
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="adminEmail">Email</label>
+        <input type="email" id="adminEmail" placeholder="Enter contact email">
+      </div>
+
+      <div class="form-group">
+        <label for="adminPhone">Phone Number</label>
+        <input type="text" id="adminPhone" placeholder="Enter contact phone">
+      </div>
+
+      <div class="form-group">
+        <label for="adminAddress">Address</label>
+        <textarea id="adminAddress" rows="3" placeholder="Enter contact address"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="adminAddress">Address</label>
+        <textarea id="adminAddress2" rows="3" placeholder="Enter contact address"></textarea>
+      </div>
+      <div id="msg" style="text-align: center; margin: 10px auto; color: green;"></div>
+      <button type="submit">Save</button>
+    </form>
+</div>
+</div>
+
+</main>
+
+  
+    
+
+
+<div id="label-preview" style="text-align: center; padding: 10px; color: #fff;">Refresh to Preview contact info</div>
+
+        <div class="bar"></div>
+        <div id="label-preview" style="text-align: center; padding: 10px; font-weight: bold; color: #fff;">Preview</div>
+
+<div class="contact-section">
+    <!-- Contact Info Card -->
+    <div class="contact-card">
+      <h2>Having Problem?</h2>
+    
+      <p><strong>Mail us:</strong><br>
+       <p><a id="email-id" href="mailto:shaanj062@gmail.com">
+        shaanj062@gmail.com</a></p>
+      
+     <br>
+     <p style><strong>Go to:</strong><br>
+      <br>
+      <a href="help.html" style=" color: #032541;
+      text-decoration: none;
+      font-weight: bold; background-color: slategray; padding: 10px; border-radius: 5px; color: #ffffff;" >Help?</a></p>
+    </div>
+
+
+</div>
+
+
+
+
+
+        <div class="bar"></div>
+<div class="contact-section">
+    <!-- Contact Info Card -->
+    <div class="contact-card">
+      <h2>Contact Us</h2>
+      <p style=" line-height: 1.6;"><strong>Address:</strong></p>
+      <p id="addr1"> 69 China town</p>
+      <p id="addr2">Film City, 690001,Unknown</p>
+
+      <p><strong>Phone:</strong></p>
+      <p id="ph">+91 6969696969</p>
+    
+
+      <p><strong>Email:</strong><br></p>
+      <p><a id="email-id2" href="mailto:shaanj062@gmail.com">
+        shaanj062@gmail.com</a></p>
+    </div>
+
+
+</div>
+        <!-- footer -->
+
+
+      <footer>
+    
+     <div class="footer" style=" text-align: center;">
+       <p>&copy; 2025 CORN FLIX</p>
+        <p > Oak Leaf</p>
+        </div>
+   
+  </footer>
+
+  <script src="adminx.js"></script>
+   <script src="bannerUpload.js"></script>
+   <script src="cover.js"></script>
+   <script src="movie.js"></script>
+   <script src="movieSend.js"></script>
+   
+    <script src="contactupdate.js"></script>
+<!-- <script src="slide.js"></script> -->
+    <script src="hamburger.js"></script>
+  
+    

@@ -1,0 +1,115 @@
+.help-search{
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+
+}
+.help-search input{
+    border:1px solid #0a3a64;
+    border-radius: 5px;
+    width:90%;
+    padding: 10px;
+    margin: 10px auto;
+}
+.help-search button{
+    cursor: pointer;
+    color: #fff;
+    background-color: #0a3a64;
+    padding:10px;
+    width: 150px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s ease;
+}
+.help-search button:hover{
+    background-color: lightslategray;
+    color: #fff;
+}
+
+.faq-cont{
+  display: block;
+    max-width: 90%;
+    margin: 10px auto;
+}
+#post-cont{
+  display: block;
+    max-width: 90%;
+    margin: 10px auto;
+}
+.faq{
+  display: none;
+     background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    padding: 16px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  .faq:hover {
+    background: #f3f4f6;
+  }
+  .qs{
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  .ans{
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 10px;
+    line-height: 1.5;
+    
+    color: #374151;
+  }
+
+  #arrow{
+    transition: all 0.3s;
+    transform: rotate(90deg);
+  }
+
+
+#arrow.active{
+    transform: rotate(180deg);
+}
+
+
+
+
+.faq.open .ans {
+   
+    max-height: 200px; 
+  }
+  h2{
+    font-weight: none;
+  }
+  .post-qs{
+   
+  }
+
+  .post-qs textarea{
+      width: 50%;
+    min-height: 40px;     
+    max-height: 200px;    
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: none;        
+     
+    transition: border-color 0.2s;
+  }
+    textarea:focus {
+    border-color: #6366f1; /* pretty focus color */
+    outline: none;
+  }
+  .post-qs button{
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #0a3a64;
+    color: #fff;
+  }
