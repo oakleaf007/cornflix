@@ -8,6 +8,8 @@ import path from "path";
 
 
 
+// router import
+
 import contactRoute from "./router/contactRoute.js";
 
 import helpRoute from "./router/helpRouter.js";
@@ -19,6 +21,8 @@ import movieRoute from "./router/movieRouter.js";
 import coverRoute  from "./router/coverRouter.js";
 
 import uploadMovieRoute from "./router/movietomongo.js";
+
+import adminloginroute from "./router/adminloginrouter.js";
 
 dotenv.config();
 
@@ -41,7 +45,7 @@ mongoose.connect(process.env.mongouri)
 
 
 
-// serving files
+// serving apis
 
 
 app.use("/api/contact", contactRoute);
@@ -57,8 +61,12 @@ app.use("/api/cover", coverRoute);
 app.use("/api/postmovie",uploadMovieRoute);
 
 
+app.use("/api/adminlogin", adminloginroute)
 
 
+
+
+// serving webpages
 
 
 app.use("/",express.static("frontend"));
@@ -85,26 +93,27 @@ app.use("/",express.static("frontend"));
   res.sendFile(path.join(process.cwd(), "frontend","signup.html"));
 });
 
+// admin serving
 
 app.use("/adminx", express.static(path.join(process.cwd(), "admin")));
 
 
 app.get("/xadminx",(req, res)=>{
-    res.sendFile(path.join(process.cwd(),"admin","adminx.html"));
+    res.sendFile(path.join(process.cwd(),"admin","adminx-login.html"));
 });
 app.get("/helpx",(req, res)=>{
     res.sendFile(path.join(process.cwd(),"admin","admin-help.html"));
 
 });
 
-app.get("/xadminx-login",(req, res)=>{
-    res.sendFile(path.join(process.cwd(),"admin","adminx-login.html"));
+app.get("/badmin",(req, res)=>{
+    res.sendFile(path.join(process.cwd(),"admin","adminx.html"));
 });
 
 
 
 
-
+// server
 
 const port =  5000;
 app.listen(port, '0.0.0.0',()=>{

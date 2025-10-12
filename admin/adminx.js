@@ -1,3 +1,33 @@
+const loggedIn = localStorage.getItem("loggedin");
+
+if(loggedIn != "true"){
+    window.location.href ="/xadminx";
+}
+
+document.getElementById("signout").addEventListener("click", (e) => {
+  e.preventDefault(); 
+
+ 
+  localStorage.removeItem("loggedin");
+  localStorage.removeItem("usermail");
+
+ 
+  window.location.href = "/xadminx"; 
+});
+document.getElementById("signout2").addEventListener("click", (e) => {
+  e.preventDefault(); 
+
+ 
+  localStorage.removeItem("loggedin");
+  localStorage.removeItem("usermail");
+
+ 
+  window.location.href = "/xadminx"; 
+});
+
+
+
+
 const form = document.getElementById("contact-form");
 const emailInput = document.getElementById("adminEmail");
 const phoneInput = document.getElementById("adminPhone");

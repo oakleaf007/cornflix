@@ -53,19 +53,21 @@
 
 <main>
 
+
+  <!-- login form -->
  <div class="form-wrapper">
 <div class="form-container">
   <h2>Sign in</h2>
-<form class="frm" action="home.html">
+<form class="frm" id="adminlogin" >
 
   <div class="input-group">
   <label for="email">Email</label>
-  <input type="email" id="email" required>
+  <input type="email" id="email" placeholder="email" autocomplete="on" required>
   </div>
 
   <div class="input-group">
-  <label for="password">Password</label>
-  <input type="password" id="passwd" required>
+  <label for="passwd">Password</label>
+  <input type="password" id="passwd" placeholder="password" required>
 </div>
   
 <div class="checkbox-group">
@@ -80,6 +82,13 @@
   <button id="submitbtn">Sign in</button>
 
 </form>
+
+<div><p id="msg" style="color: green;">event msg</p></div>
+
+<!--  -->
+
+
+
 <p class="sign-text"><a href="add-admin.html"> Add an admin</a></p>
 <p class="sign-text"><a href="forgot.html">Forgot admin password?</a></p>
 
@@ -112,8 +121,9 @@
 
   
 
-    <script src="signin.js"></script>
-    
+    <script src="/signin.js"></script>
+   
+     <script src="/adminx/adminlogin.js"></script>
   
     </body>
 </html>

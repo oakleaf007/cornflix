@@ -1,4 +1,24 @@
  
+
+ const loggedIn = localStorage.getItem("loggedin");
+
+if(loggedIn != "true"){
+    window.location.href ="/xadminx";
+}
+
+
+document.getElementById("signout").addEventListener("click", (e) => {
+  e.preventDefault(); 
+
+ 
+  localStorage.removeItem("loggedin");
+  localStorage.removeItem("usermail");
+
+ 
+  window.location.href = "/xadminx"; 
+});
+
+
 async function loadQS(){
     const res = await fetch(api);
     const data = await res.json();
