@@ -715,7 +715,9 @@ border: none;
     padding:1px;
     max-width: 95%;
 }
-
+#movie-template{
+    display: none;
+}
 .movie-card{
     border-radius: 12px;
   background-color:honeydew;

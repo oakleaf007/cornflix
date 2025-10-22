@@ -40,6 +40,19 @@ export const getMovies = async(req, res)=>{
     }
 };
 
+export const getMovieById = async (req, res)=>
+{
+    try{
+        const { id } = req.params;
+        const movie = await Movie.findById(id);
+        if(!movie) return res.status(404).json({error: "Movie not found"});
+        res.status(200).json(movie);
+    }catch(err){
+        res.status(500).json({error: err.message});
+    }
+};
+
+
 
 // delete controller
 export const deleteMovie = async(req,res)=>{
