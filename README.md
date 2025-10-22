@@ -1,7 +1,37 @@
-🍿 Cornflix - A Modern UI for Movie Lovers
-About The Project
-Cornflix is a frontend project that brings a sleek, modern, and intuitive movie browsing experience to life. Designed with a focus on clean aesthetics and user experience, this project demonstrates a responsive layout that looks great on any device, from mobile phones to desktop screens.
+# 🎬 Corn Flix
 
-The interface presents a rich visual gallery of films and TV shows, organized into familiar, scrollable categories, creating an engaging and seamless browsing experience for the user.
+**Corn Flix** is a dynamic web application inspired by modern movie streaming platforms. It provides users with an interactive interface to browse movie information while allowing the admin to manage all site content efficiently through a secure admin panel.
 
-Please note: This is a frontend-only demonstration designed to showcase UI/UX. The movie data is for display purposes only, and there is no backend functionality or actual video streaming.
+---
+
+## 🚀 Features
+
+### 🧑‍💻 User Side
+- 🎞️ Browse movie listings with responsive design  
+- 🔍 Search and filter movies dynamically  
+- 📄 View movie details with posters and descriptions  
+- 📩 Contact form with dynamic backend message handling  
+- ❓ FAQ section that can be updated dynamically  
+- 🔐 Authentication system for user login/signup  
+
+### 🛠️ Admin Side
+- 🧩 Secure Admin Dashboard  
+- ✏️ Add, edit, or remove movies dynamically  
+- 📬 Manage contact messages and FAQs  
+- 🌤️ Upload and manage images via **Cloudinary**  
+- 🔄 Real-time updates reflected on the user side  
+
+---
+
+## 🧰 Tech Stack
+
+| Layer | Technology |
+|:--|:--|
+| **Frontend** | HTML5, CSS3, JavaScript (ES6), Responsive UI |
+| **Backend** | Node.js, Express.js |
+| **Database** | MongoDB (Mongoose ODM) |
+| **Media Storage** | Cloudinary |
+| **Authentication** | JWT / bcrypt |
+| **Deployment** | Render |
+
+---

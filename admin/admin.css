@@ -657,7 +657,7 @@ a{
   display: flex;
   justify-content: center; /* horizontal centering */
   align-items: center;     /* vertical centering */
-            /* parent height, adjust as needed */
+          
 }
 
 /* Link wrapper */

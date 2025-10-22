@@ -1,5 +1,9 @@
+*{
+  box-sizing: border-box;
+}
+
 .video-player{
-    max-width:90%;
+    max-width:95%;
     margin: 10px auto;
     
     padding: 10px;
@@ -14,7 +18,7 @@
     overflow: hidden;
     cursor: pointer;
     position: relative;
- box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 video{
     border-radius: 12px;
@@ -45,6 +49,11 @@ video{
     .play-btn:hover {
       background: #fff;
     }
+
+    .play-btn.active{
+      opacity: 0;
+      pointer-events: none;
+    }
 .desc-container{
     color: #fff;
     background-color: #02335c;
@@ -73,14 +82,15 @@ video{
     font-size: 14px;
     padding: 10px;
 }
-  .description span {
+  /* .description span {
       
      
-    }
+    } */
 
 
       .rating-section {
       margin-top: 15px;
+      
    
      
     }
@@ -95,27 +105,51 @@ video{
     }
 
      .user-rating {
+      justify-content: center;
       display: flex;
       gap: 5px;
-      font-size: 2rem;
+      flex-wrap: wrap;
+     
+      line-height: 1;
       cursor: pointer;
     }
-    .user-rating button{
-        cursor: pointer;
-      
-        border-radius: 4px;
-        border: none;
+    .rate{
+   
+      place-items: center;
+       display: flex;
+       gap: 10px;
+       flex-wrap: wrap;
         
     }
        .user-rating span {
+    font-size: x-large;
+      place-items: center;
+        
       color: #fff;
       transition: color 0.3s;
+      
     }
-    .user-rating span.active {
+    /* .user-rating span:hover{
+
+    } */
+    /* .user-rating span.active {
     
-    }
+    } */
     .user-result {
       margin-top: 8px;
       font-weight: bold;
     
+    }
+    #sub{
+      padding: 10px;
+     cursor: pointer;
+      
+        border-radius: 4px;
+        border: none;
+     transition: 0.3s all ease;
+    }
+
+    #sub:hover{
+      background-color: #59b1f9;
+      color: #fff;
     }

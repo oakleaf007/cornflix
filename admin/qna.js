@@ -2,8 +2,7 @@ const api = "/api/questions";
 
 
 
-
-
+// loading the qna
 async function loadQS(){
     const res = await fetch(api);
     const data = await res.json();
@@ -34,6 +33,10 @@ async function loadQS(){
     
 }
 
+
+// for answerbox;
+
+
 function showAnswerBox(id, existingAnswer = "") {
   const div = document.getElementById("answer-box-" + id);
 
@@ -57,7 +60,7 @@ function showAnswer(id){
 }
 
 
-
+// deleting answer
 async function deleteAnswer(id) {
   if (!confirm("Delete this answer?")) return;
 
@@ -73,6 +76,7 @@ async function deleteAnswer(id) {
   }
 }
 
+// deleting qs
 async function deleteQuestion(id) {
   if (!confirm("Delete this question?")) return;
 
@@ -91,7 +95,7 @@ async function deleteQuestion(id) {
 
 
 
-
+// submitting answer
 
 const ansmsg = document.getElementById("msg");
 

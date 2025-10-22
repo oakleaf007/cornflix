@@ -132,7 +132,6 @@ header{
    padding: 10px;
     cursor: pointer;
    
-    transition: transform 0.3s ease;
      transition: all 0.3s ease;
 }
 .wrapper button:hover{
@@ -156,7 +155,8 @@ header{
 
 .nav li{
      padding: 10px;
-      transition: transform 0.3s;
+      
+     
      transition: all 0.3s ease;
 }
 nav li:hover{
@@ -461,13 +461,13 @@ max-width: 400px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    background: linear-gradient(135deg, #0a3a64, #2575fc);
-    transition: 0.3s;
+    background: #2575fc;
+    transition: all 0.3s ease;
     color: #ffffff;
 }
 .frm button:hover {
-      transform: scale(1.05);
-      background: linear-gradient(135deg, #2575fc, #0a3a64);
+     
+      background: #0a3a64;
     }
 
   .sign-text  a{

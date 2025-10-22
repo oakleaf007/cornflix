@@ -10,4 +10,4 @@ router.post("/", addContact);
 
 router.get("/", getContact);
 
-export default router;
+export default router;  

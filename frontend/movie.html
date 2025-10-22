@@ -47,7 +47,7 @@
             
             <ul class="nav">
              
-                 <li><a href="#">Home</a></li>
+                 <li><a href="/home">Home</a></li>
               
                 
             </ul>
@@ -61,8 +61,8 @@
              <ul class="nav2">
                
                 
-                <div class="list"><a href="#">Home</a></div>
-                 <div class="list"><a href="help.html">Help?</a></div>
+                <div class="list"><a href="/home">Home</a></div>
+                 <div class="list"><a href="/help">Help?</a></div>
                 <div class="list"> 
                     <button id="genr2" class="genre2">Genres <span class="arrow">&#10095;</span></button>
                 </div> 
@@ -97,13 +97,14 @@
 <div class="video-player">
 
     <div class="video-box">
-<video controls>
-    <source src="yoputube.com" type="video/mp4">
-    player test
+<video controls id="vid">
+    <source src="https://res.cloudinary.com/debvr29qr/video/upload/v1757310472/videos/s9aevvz7f4q8xyjrkoiu.mp4" type="video/mp4">
+  
 
 </video>
+
   <div class="play-overlay" id="overlay">
-        <div class="play-btn">▶</div>
+        <div class="play-btn" id="overlay2">▶</div>
       </div>
     </div>
 
@@ -122,25 +123,32 @@
 
       <div class="rating-section">
       <div class="section-title">Overall Rating</div>
-      <div class="overall-rating" >Rating: <span class="rating">5.6</span>/10</div>
+      <div class="overall-rating" >Rating: <span class="rating">6.9</span>/10</div>
     </div>
 
 
 
      <div class="rating-section">
       <div class="section-title">Your Rating</div>
+      <div class="rate">
       <div class="user-rating" id="user-rating">
         <span data-value="1">★</span>
         <span data-value="2">★</span>
         <span data-value="3">★</span>
         <span data-value="4">★</span>
         <span data-value="5">★</span>
-        <button type="sumbit">Submit</button>
+         
       </div>
+      
+      <button type="sumbit" id="sub">Submit</button>
+    </div>
       <div class="user-result" id="user-result"></div>
     </div>
     </div>
 </div>
+
+
+
 
 
 </main>
@@ -211,5 +219,8 @@
   <script src="contactupdate.js"></script>
 
     <script src="hamburger.js"></script>
+    <script src="play.js"></script>
+    </body>
+    </html>
   
     

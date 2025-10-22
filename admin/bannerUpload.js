@@ -77,6 +77,7 @@ form2.addEventListener("submit", async(e)=>{
 
        const result = await res.json();
         msg2.textContent = result.message || result.error;
+        
     }catch(error){
         msg2.textContent="error:"+ error.message;
          msg2.style.color ="red";

@@ -24,6 +24,8 @@ import uploadMovieRoute from "./router/movietomongo.js";
 
 import adminloginroute from "./router/adminloginrouter.js";
 
+
+
 dotenv.config();
 
 const app = express();
@@ -80,6 +82,11 @@ app.use("/",express.static("frontend"));
  app.get("/home", (req, res) => {
   res.sendFile(path.join(process.cwd(), "frontend","home.html"));
 });
+
+ app.get("/watch", (req, res) => {
+  res.sendFile(path.join(process.cwd(), "frontend","movie.html"));
+});
+
 
  app.get("/help", (req, res) => {
   res.sendFile(path.join(process.cwd(), "frontend","help.html"));

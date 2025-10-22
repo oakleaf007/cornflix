@@ -27,3 +27,32 @@ export const createMovie = async(req, res)=>{
         res.status(500).json({error: err.message});
     }
 };
+
+
+// fetching controller
+export const getMovies = async(req, res)=>{
+    try{
+        const movies = await Movie.find().sort({createdAt:-1});
+        res.status(200).json(movies);
+    }
+    catch (err){
+        res.status(500).json({error: err.message});
+    }
+};
+
+
+// delete controller
+export const deleteMovie = async(req,res)=>{
+    try{
+        const {id} =req.params;
+
+        const deletedMovie = await Movie.findByIdAndDelete(id);
+        if(!deletedMovie) return res.status(400).json({error: "movie not found"});
+
+         res.status(200).json({message:"Movie deleted"});
+    
+    }catch(err){
+        res.status(500).json({error: err.message});
+    }
+   ;
+}

@@ -125,7 +125,7 @@
     <!-- Movie to mongo upload -->
  <div class="section">
       <h3>Movie Details</h3>
-      <form>
+      <form id="movie_form">
         <label for="movieName">Movie Name</label>
         <input type="text" id="movieName" name="movieName" placeholder="Enter movie name" required>
 
@@ -145,27 +145,27 @@
         <label for="movieDesc">Description</label>
         <textarea id="movieDesc" name="movieDesc" placeholder="Enter description"></textarea>
 
-  <label for="movieDesc">Starring</label>
-        <textarea id="star" name="moviestar" placeholder="Enter star details"></textarea>
+  <!-- <label for="movieDesc">Starring</label>
+        <textarea id="star" name="moviestar" placeholder="Enter star details"></textarea> -->
 
         
-          <label for="movieDesc">Director</label>
-        <textarea id="movieDirector" name="movieDirector" placeholder="Enter director details"></textarea>
+          <!-- <label for="movieDesc">Director</label>
+        <textarea id="movieDirector" name="movieDirector" placeholder="Enter director details"></textarea> -->
 
-          <label for="movieDesc">Release year</label>
-        <textarea id="release" name="movieDesc" placeholder="Enter Release year"></textarea>
+          <!-- <label for="movieDesc">Release year</label>
+        <textarea id="release" name="movieDesc" placeholder="Enter Release year"></textarea> -->
 
-  <label for="movieDesc">language</label>
-        <textarea id="language" name="movieDesc" placeholder="Enter description"></textarea>  
+  <!-- <label for="movieDesc">language</label>
+        <textarea id="language" name="movieDesc" placeholder="Enter description"></textarea>   -->
               
-         <label for="banner">Enter Movie Link</label>
+         <label for="link">Enter Movie Link</label>
          <input id="movielink" type="text" name="link" placeholder="Enter movie link" required>
          
-         <label for="banner">Enter Movie cover Link</label>
-         <input id="cover-link" type="text" name="link" placeholder="Enter cover link" required>
+         <label for="cover-link">Enter Movie cover Link</label>
+         <input id="cover-link" type="text" name="cover-link" placeholder="Enter cover link" required>
 
         
-
+        <div id="upload-status" style="padding: 10px;"></div>
         <button type="submit">Upload Movie to the site</button>
       </form>
     </div>
@@ -192,9 +192,12 @@
 
 <div id="label" style="padding: 10px; color: #fff; text-align: center;background: lightslategray; width: 98%; margin: 10px auto;">All slides links: deleting a link will delete a  slide</div>
 <div id="admin-banners" style="color:#fff; width: 90%; padding: 10px;">
+
   <!-- Each banner will be added here -->
 </div>
+<div id="label" style="padding: 10px; color: #fff; text-align: center;background: lightslategray; width: 98%; margin: 10px auto;">All Movies links: deleting a link will delete a  movie</div>
 
+<div id = "admin-movie" style="color:#fff; width: 90%; padding: 10px;"></div>
 
 
   <div id="label" style=" text-align: center; margin: 10px auto; width: 98%;"><a href="#" style="display: flex; background-color: lightslategray; padding: 15px; margin: 10px auto; text-align: left; color: #ffffff; border-radius:4px;">Trending</a></div>
