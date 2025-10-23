@@ -1,5 +1,5 @@
 
-
+// This sign in includes sign up if not user found
 document.getElementById("adminlogin").addEventListener("submit", async(e)=>{
     e.preventDefault();
 

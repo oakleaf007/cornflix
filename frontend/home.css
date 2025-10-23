@@ -602,6 +602,10 @@ border: none;
 
 /* movie container */
 
+
+#movie-template{
+    display: none;
+}
 .movie-container{
     
     position: relative;

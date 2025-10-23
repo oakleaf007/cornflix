@@ -5,7 +5,7 @@ export const addContact = async (req, res) => {
   try {
     const data = req.body;
 
-    // Update existing OR insert if none exists
+    // Update existing OR insert if not exists
     const contact = await Contact.findOneAndUpdate(
       {},
       data,

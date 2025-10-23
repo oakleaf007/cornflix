@@ -1,3 +1,9 @@
+
+// this router has controller included 
+// it was part of a quick testing admin panel and securing it from unauth access
+// move the function to the controller and keep the router
+
+
 import express from "express";
 import bcrypt from "bcryptjs";
 import Admin from "../models/Adminx.js"

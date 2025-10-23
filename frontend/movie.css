@@ -7,21 +7,21 @@
     margin: 10px auto;
     
     padding: 10px;
-    border-radius: 12px;
+    border-radius: 4px;
    
 
 }
 .video-box{
  
     margin-bottom: 20px;
-    border-radius: 12px;
+    border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
     position: relative;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  
 }
 video{
-    border-radius: 12px;
+    border-radius: 4px;
     width: 100%;
     display: block;
     
@@ -57,11 +57,11 @@ video{
 .desc-container{
     color: #fff;
     background-color: #02335c;
-    border-radius: 12px;
+    border-radius: 4px;
     padding: 20px;
     margin: 10px auto;
   
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    
 }
 .movie-title{
     

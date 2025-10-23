@@ -155,7 +155,7 @@ fetchMovies();
 
 
 
-
+// movie render in the designated slot
 
 async function renderMovies(){
 

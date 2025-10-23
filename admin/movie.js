@@ -1,3 +1,5 @@
+// Movie upload to cloudinary
+
 const form1 = document.getElementById("movie-form");
 
 const statusmsg = document.getElementById("movie-status");

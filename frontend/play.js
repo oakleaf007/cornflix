@@ -1,8 +1,11 @@
+// play button toggle
 const play = document.getElementById("overlay2");
 const video = document.getElementById("vid");
 
 play.addEventListener("click",()=>{
-video.play();
+video.play().catch(err=>{
+  console.error("Error Playing video: ",err)
+});
 play.classList.add("active");
 });
 
@@ -14,7 +17,7 @@ play.classList.add("active");
       play.classList.add("active");
     });
 
-
+// movie loading from backend
 async function loadMovie() {
 
   const url = new URLSearchParams(window.location.search);
@@ -32,6 +35,7 @@ async function loadMovie() {
     const vid = document.getElementById("vid");
 
     title.textContent=movie.mName;
+    
     genre.textContent=`genre: ${movie.genre}`;
 
     desc.innerHTML=movie.description;
@@ -44,8 +48,16 @@ async function loadMovie() {
 
 
   }catch(err){
-    console.error("Error loading movie: ", err)
-  }
+
+
+  console.error("Error loading movie: ", err)
+
+    
+
+
+
+  
+} 
   
 } 
 window.onload = loadMovie;

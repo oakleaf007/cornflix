@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./loader.css">
     <title>CORN FLIX</title>
 </head>
 <body>
+   <div id="loader">
+      <div class="spin"></div>
+   </div>
    
     <header>
         <div class="logo" >CORN FLIX</div>
@@ -135,7 +139,7 @@
 
         <!-- <div id="label" style="padding: 10px;  text-align: center; color: #ffffff; letter-spacing: 2px;">Welcome Oak Leaf</div> -->
 
-        <!-- Place for ads( if needed) -->
+    
          <!-- <div id="label" style="padding: 10px;  text-align: center; height: 100px; background-color: #ffffff;"></div> -->
 <!-- 
     <div id="quick-bar">
@@ -153,49 +157,18 @@
 
             <!-- Movie container -->
 <div id="label" style=" text-align: center; margin: 10px auto; width: 98%;"><a href="#" style="display: flex; background-color: lightslategray; padding: 15px; margin: 10px auto; text-align: left; color: #ffffff; border-radius:4px;">Trending</a></div>
-            <div class="movie-container" id="trend">
-                <div class="movie-card">
+               <div class="movie-container" id="movie-container">
+                <div class="movie-card" id="movie-template">
                 <a href="#" class="movie-link"> 
                    <div class="poster">
-                    <img src="f4.png"></div>
+                    <img src="#" alt="Movie poster"></div>
                     
-                    <p class="title">Frogcacacddcdvsvvvsvsvsvsfva</p>
+                    <p class="title">Doctor Dinosaur</p>
                     </a>
                  </div>
                  
          
-          <div class="movie-card">
-                <a href="#" class="movie-link"> 
-                   <div class="poster">
-                    <img src="superman.png"></div>
-                    
-                    <p class="title">Frog</p>
-                    </a>
-                 </div>
-                 
-                  <div class="movie-card">
-             <a href="#" class="movie-link">
-                 <div class="poster">
-                    <img src="soldier.png"></div>
-                     <p class="title">Frog</p>
-                </a>
-         </div>
-          
-                  <div class="movie-card">
-             <a href="#" class="movie-link">
-                 <div class="poster">
-                    <img src="superman2.png"></div>
-                     <p class="title">Frog</p>
-                </a>
-         </div>
-          
-                  <div class="movie-card">
-             <a href="#" class="movie-link">
-                 <div class="poster">
-                    <img src="conju.png"></div>
-                     <p class="title">Frog</p>
-                </a>
-         </div>
+         
                      
           
                
@@ -214,33 +187,20 @@
 
    
 <div id="label" style=" text-align: center; margin: 10px auto;  width: 98%;"><a href="#" style="display: flex; background-color: lightslategray; padding: 15px; margin: 10px auto; text-align: left; color: #ffffff; border-radius:4px;">New Releases</a></div>
-            <div class="movie-container" id="foru">
-                <div class="movie-card">
+              <div class="movie-container" id="movie-container">
+                <div class="movie-card" id="movie-template">
                 <a href="#" class="movie-link"> 
                    <div class="poster">
-                    <img src="profile.png"></div>
+                    <img src="#" alt="Movie poster"></div>
                     
-                    <p class="title">Frogcacacddcdvsvvvsvsvsvsfva</p>
+                    <p class="title">Doctor Dinosaur</p>
                     </a>
                  </div>
                  
          
-          <div class="movie-card">
-                <a href="#" class="movie-link"> 
-                   <div class="poster">
-                    <img src="profile.png"></div>
-                    
-                    <p class="title">Frog</p>
-                    </a>
-                 </div>
-                 
-                  <div class="movie-card">
-             <a href="#" class="movie-link">
-                 <div class="poster">
-                    <img src="profile.png"></div>
-                     <p class="title">Frog</p>
-                </a>
-         </div>
+         
+                     
+          
                
             </div>
              <div class="more">
@@ -253,36 +213,8 @@
                     </a>
                  </div>
 <!-- For u -->
-<div id="label" style=" text-align: center; margin: 10px auto;  width: 98%;"><a href="#" style="display: flex; background-color: lightslategray; padding: 15px; margin: 10px auto; text-align: left; color: #ffffff; border-radius:4px;">For You</a></div>
-            <div class="movie-container" id="newR">
-               <div class="movie-card">
-                <a href="#" class="movie-link"> 
-                   <div class="poster">
-                    <img src="profile.png"></div>
-                    
-                    <p class="title">Frogcacacddcdvsvvvsvsvsvsfva</p>
-                    </a>
-                 </div>
-                 
-         
-          <div class="movie-card">
-                <a href="#" class="movie-link"> 
-                   <div class="poster">
-                    <img src="profile.png"></div>
-                    
-                    <p class="title">Frog</p>
-                    </a>
-                 </div>
-                 
-                  <div class="movie-card">
-             <a href="#" class="movie-link">
-                 <div class="poster">
-                    <img src="profile.png"></div>
-                     <p class="title">Frog</p>
-                </a>
-         </div>
-               
-            </div>
+<!-- <div id="label" style=" text-align: center; margin: 10px auto;  width: 98%;"><a href="#" style="display: flex; background-color: lightslategray; padding: 15px; margin: 10px auto; text-align: left; color: #ffffff; border-radius:4px;">For You</a></div> -->
+          
 
 
 
@@ -347,6 +279,7 @@
    
   </footer>
 
+   <script src="loader.js"></script>
    <script src="contactupdate.js"></script>
 <script src="slide.js"></script>
     <script src="hamburger.js"></script>

@@ -40,6 +40,9 @@ export const getMovies = async(req, res)=>{
     }
 };
 
+
+// fetching movie by id and it is for the player
+
 export const getMovieById = async (req, res)=>
 {
     try{

@@ -1,3 +1,4 @@
+// load only  local storage item valid for security
 const loggedIn = localStorage.getItem("loggedin");
 
 if(loggedIn != "true"){
@@ -14,6 +15,9 @@ document.getElementById("signout").addEventListener("click", (e) => {
  
   window.location.href = "/xadminx"; 
 });
+
+
+
 document.getElementById("signout2").addEventListener("click", (e) => {
   e.preventDefault(); 
 
@@ -35,7 +39,7 @@ const addressInput = document.getElementById("adminAddress");
 const addressInput2 = document.getElementById("adminAddress2");
 const msg = document.getElementById("msg");
 
-
+// contact load
 async function load(){
     try{
         const res = await fetch ("/api/contact");
@@ -53,7 +57,7 @@ async function load(){
 }
 
 
-
+// submitting and updating the contact details
 form.addEventListener("submit", async(e)=>{
     e.preventDefault();
 

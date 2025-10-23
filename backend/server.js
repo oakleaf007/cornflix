@@ -24,6 +24,7 @@ import uploadMovieRoute from "./router/movietomongo.js";
 
 import adminloginroute from "./router/adminloginrouter.js";
 
+import userRoute from "./router/userRoute.js";
 
 
 dotenv.config();
@@ -63,9 +64,9 @@ app.use("/api/cover", coverRoute);
 app.use("/api/postmovie",uploadMovieRoute);
 
 
-app.use("/api/adminlogin", adminloginroute)
+app.use("/api/adminlogin", adminloginroute);
 
-
+app.use("/api/sign", userRoute);
 
 
 // serving webpages
