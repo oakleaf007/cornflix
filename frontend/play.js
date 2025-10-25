@@ -1,6 +1,8 @@
 // play button toggle
 const play = document.getElementById("overlay2");
 const video = document.getElementById("vid");
+const source = document.getElementsByTagName('source');
+
 
 play.addEventListener("click",()=>{
 video.play().catch(err=>{
@@ -32,7 +34,8 @@ async function loadMovie() {
     const title= document.getElementById("movie-title");
     const desc = document.getElementById("desc");
     const genre = document.getElementById("movie-genre");
-    const vid = document.getElementById("vid");
+    const video = document.getElementById("vid");
+    const vid = video.querySelector('source');
 
     title.textContent=movie.mName;
     
@@ -41,6 +44,7 @@ async function loadMovie() {
     desc.innerHTML=movie.description;
 
     vid.src = movie.mLink;
+    video.load();
    
     
    

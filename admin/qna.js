@@ -24,7 +24,7 @@ async function loadQS(){
           <button onclick="showAnswerBox('${q._id}', '${q.answer || ""}')" style =" padding:10px; cursor: pointer; background:#fffafa; border:none; border-radius:5px; color:#121212;">
           ${q.answer ? "Edit Answer" : "Answer"}
         </button>
-         ${q.answer ? `` : ""}
+         ${q.answer ? `<button onclick="deleteAnswer('${q._id}')">Delete Answer</button>` : ""}
     <button onclick="deleteQuestion('${q._id}')">Delete Question</button>
           </div>
         `;
@@ -63,9 +63,11 @@ function showAnswer(id){
 // deleting answer
 async function deleteAnswer(id) {
   if (!confirm("Delete this answer?")) return;
-
+  const empty ="";
   const res = await fetch(api + "/" + id + "/answer", {
-    method: "DELETE"
+    method: "POST",
+    headers: {"Content-type": "application/json"},
+    body: JSON.stringify({answer: empty}),
   });
 
   if (res.ok) {
@@ -79,9 +81,10 @@ async function deleteAnswer(id) {
 // deleting qs
 async function deleteQuestion(id) {
   if (!confirm("Delete this question?")) return;
+  
 
   const res = await fetch(api + "/" + id, {
-    method: "DELETE"
+    method:"DELETE"
   });
 
   if (res.ok) {
@@ -102,7 +105,7 @@ const ansmsg = document.getElementById("msg");
 async function submitAnswer(id){
     const answer = document.getElementById("ans-"+id).value;
 
-    if(!answer) return ansmsg.textContent="type answer before post";
+    // if(!answer) return ansmsg.textContent="type answer before post";
 
     const res = await fetch(api+"/"+id+"/answer",{
         method: "POST",

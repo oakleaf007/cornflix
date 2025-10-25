@@ -10,7 +10,7 @@ async function loadqs(){
     const data =  await res.json();
 const container = document.getElementById("cont");
     const template = document.getElementById("qa");
-
+    container.innerHTML="";
     data.forEach(q=>{
         const clone = template.cloneNode(true);
         clone.style.display =" block";
@@ -40,7 +40,7 @@ const container = document.getElementById("cont");
 
 }
 
-loadqs();
+
 
 
 
@@ -59,6 +59,11 @@ form.addEventListener("submit", async(e)=>{
         });
 
         console.log("Response status:", res.status);
+
+        if(res.ok){
+            loadqs();
+        }
+
         const data = await res.json();
         msg.textContent = data.message || "Question Submitted";
 
@@ -70,3 +75,5 @@ form.addEventListener("submit", async(e)=>{
     }
 
 });
+
+loadqs();
