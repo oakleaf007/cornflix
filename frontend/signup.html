@@ -49,7 +49,7 @@
 
 <div class="form-container">
   <h2>Sign Up</h2>
-<form class="frm" action="signin.html">
+<form class="frm" id="signup-form" >
 
   <div class="input-group">
   <label for="email">Email</label>
@@ -77,18 +77,19 @@
 </div>
 
   <div class="input-group">
-  <label for="password">Password</label>
+  <label for="password">Password [minimum 8 characters]</label>
+  <!-- use patter like (?=.*[a-z]) -->
   <input type="password" id="passwd" required>
 </div>
   <div class="input-group">
   <label for="password">Confirm Password</label>
-  <input type="password" id="confirm-pass" required>
+  <input type="password" id="confirm-pass" minlength="8" required>
   </div>
 <div class="checkbox-group">
   <input type="checkbox" id="visible">
 <label for="visible">Show Password</label>
   </div>
-
+<div id="msg" style="padding: 0px 0px  10px; font-size: 14px;"></div>
   
   <button id="submitbtn">Sign Up</button>
 
@@ -168,6 +169,7 @@
    <script src="contactupdate.js"></script>
 
     <script src="signup.js"></script>
+        <script src="sign.js"></script>
   
     </body>
 </html>

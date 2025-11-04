@@ -1,16 +1,24 @@
 
 
-async function renderMovies(){
+async function renderMovies(movies = null, containerSelect ="#container"){
 
   try{
-    const res = await fetch("/api/postmovie");
-    const movies = await res.json();
+    if(!movies){
+   const res = await fetch("/api/postmovie");
+   movies = await res.json();
 
-const container = document.querySelectorAll("#movie-container");
+    }
+    
+const container = document.querySelector(containerSelect);
 
+
+if (!container) {
+      console.error(`Container not found: ${containerSelect}`);
+      return;
+    }
 const template = document.getElementById("movie-template");
-container.forEach(container=>{
 
+ container.innerHTML = "";
 
 movies.forEach(movie=>{
   const clone = template.cloneNode(true);
@@ -30,7 +38,7 @@ title.textContent=movie.mName;
 container.appendChild(clone);
 
 });
-});
+
 
   }catch(err){
 
@@ -39,5 +47,30 @@ container.appendChild(clone);
   }
 
 }
+// movie search function
+async function searchMovies() {
+  const query = document.getElementById("searchid").value.trim();
 
-window.onload = renderMovies;
+  try {
+    const res = await fetch(`/api/postmovie/search?search=${encodeURIComponent(query)}`);
+    const data = await res.json();
+
+ 
+   renderMovies(data, "#movie-container");
+   renderMovies(data, "#movie-container2");
+
+  } catch (err) {
+    console.error("Error searching movies:", err);
+  }
+}
+
+// load after dom content load
+
+window.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("searchbtn");
+  if (btn) btn.addEventListener("click", searchMovies);
+
+ 
+  renderMovies(null, "#movie-container");
+  renderMovies(null, "#movie-container2");
+});

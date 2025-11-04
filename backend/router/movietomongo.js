@@ -2,6 +2,7 @@ import { createMovie, deleteMovie, getMovieById, getMovies } from "../controller
 
 
 import express from "express";
+import Movie from "../models/movies.js";
 
 const router = express.Router();
 
@@ -11,6 +12,14 @@ router.get("/", getMovies);
 router.get("/getmovie/:id", getMovieById);
 
 router.delete("/:id",deleteMovie);
+
+router.get("/search", async(req, res)=>{
+    const search = req.query.search?.toLowerCase() || "";
+    const searched = await Movie.find({
+        mName: {$regex: search, $options : "i"}
+    });
+    res.json(searched);
+})
 
 // this is for testing
 router.get("/test", (req,res)=>{
