@@ -1,5 +1,6 @@
-import User from "../models/user.js"
+import User from "../models/user.js";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
 
 // signup for new user
@@ -37,4 +38,45 @@ const newUser = new User({email, name, gender, pass: hashpass});
         res.status(500).json({message: " Server error"});
 
     }
+};
+
+
+// this is for login
+export const signin = async(req,res)=>{
+    try{
+        const {email, pass} = req.body;
+
+        if(!email || !pass){
+            return res.status(400).json({message:"Email and password required"});
+
+             
+        }
+        const user = await User.findOne({email});
+
+        if(!user){
+          return  res.status(404).json({message: "User not found , Please register."})
+        }
+
+        const validPass = await bcrypt.compare(pass, user.pass);
+        if(!validPass){
+           return res.status(401).json({message: "Invalid Credential"});
+        }
+
+        
+        const token = jwt.sign( {id: user._id, email: user.email},
+            process.env.JWT_SECRET || "dinosaur",
+         {expiresIn: "1h"});
+
+            res.status(200).json({message: "login successfull",
+                 token,
+                  user:{id: user._id, name: user.name, email:user.email
+                    
+                  }});
+
+    }catch(err){
+            console.log("Error: ", err);
+        return res.status(500).json({message:"Server Error"});
+
+    }
+    
 };

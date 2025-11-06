@@ -23,13 +23,13 @@ document.getElementById("signup-form").addEventListener("submit", async(e)=>{
 
      msg.textContent="";
      if(!name || !email || !passwd || !gender){
-       msg.textContent="";
+       
         msg.textContent="Fields can not be empty!";
         return;
      }
 
      if(passwd!==confirm){
-       msg.textContent="";
+    
         msg.textContent="Confirm password mismatch!";
           msg.style.color = "red";
           return;
@@ -60,3 +60,5 @@ document.getElementById("signup-form").addEventListener("submit", async(e)=>{
     
 
 })
+
+

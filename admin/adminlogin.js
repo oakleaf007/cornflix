@@ -27,7 +27,7 @@ document.getElementById("adminlogin").addEventListener("submit", async(e)=>{
 
         }else{
             msg.style.color = "red";
-            msg.textContent=data.message;
+            msg.textContent="No user found";
             
         }
     }
