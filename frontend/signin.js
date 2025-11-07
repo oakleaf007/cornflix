@@ -68,6 +68,7 @@ const data = await res.json();
     const fl = data.user.name.charAt(0).toUpperCase();
     localStorage.setItem("username", fl);
      localStorage.setItem("token", data.token);
+     
     setTimeout(()=>{
       window.location.href="/home";
 

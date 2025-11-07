@@ -50,12 +50,15 @@ container.appendChild(clone);
 // movie search function
 async function searchMovies() {
   const query = document.getElementById("searchid").value.trim();
-
+ if(!query){
+  renderMovies(null, "#movie-container");
+  renderMovies(null, "#movie-container2");
+  return;
+    }
   try {
     const res = await fetch(`/api/postmovie/search?search=${encodeURIComponent(query)}`);
-    const data = await res.json();
-
- 
+    const data = await res.json()
+   
    renderMovies(data, "#movie-container");
    renderMovies(data, "#movie-container2");
 
