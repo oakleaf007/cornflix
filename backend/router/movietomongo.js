@@ -1,5 +1,5 @@
 import { createMovie, deleteMovie, getMovieById, getMovies } from "../controller/movieController.js";
-
+import {auth} from "../middleware/auth.js";
 
 import express from "express";
 import Movie from "../models/movies.js";
@@ -9,7 +9,8 @@ const router = express.Router();
 router.post("/movietomongo", createMovie);
 
 router.get("/", getMovies);
-router.get("/getmovie/:id", getMovieById);
+
+router.get("/getmovie/:id",auth, getMovieById);
 
 router.delete("/:id",deleteMovie);
 

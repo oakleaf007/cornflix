@@ -66,7 +66,7 @@ const data = await res.json();
     msg.textContent="Login successfull, redirecting...";
     msg.style.color="green";
     const fl = data.user.name.charAt(0).toUpperCase();
-    localStorage.setItem("username", fl);
+   
      localStorage.setItem("token", data.token);
      
     setTimeout(()=>{

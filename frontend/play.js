@@ -24,9 +24,16 @@ async function loadMovie() {
 
   const url = new URLSearchParams(window.location.search);
   const movieId = url.get('id');
-
+  const token = localStorage.getItem("token");
+  if(!token){
+    return;
+  }
   try{
-    const res = await fetch(`/api/postmovie/getmovie/${movieId}`);
+    const res = await fetch(`/api/postmovie/getmovie/${movieId}`,{
+      headers:{
+        Authorization: "Bearer " + token
+      }
+    });
     if(!res.ok) throw new Error("Movie not found");
 
     const movie = await res.json();

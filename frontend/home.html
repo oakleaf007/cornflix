@@ -299,20 +299,29 @@
   </footer>
 <script>
 
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", async()=>{
   const token = localStorage.getItem("token");
   if(!token){
     window.location.href="/signin";
+    return;
   }
-})
+
+  const res = await fetch("/api/userProfile/profile",{
+    headers:{Authorization: "Bearer "+token}
+  })
 
 
-  const uname = localStorage.getItem("username");
-console.log(uname);
-  const user =document.querySelectorAll(".user");
+// if(!res.ok){
+//   localStorage.removeItem("token");
+//   return window.location.href="/signin";
+// }
+
+const data = await res.json();
+console.log(data);
+const user =document.querySelectorAll(".user");
 
   user.forEach(span=>{
-    span.textContent=uname;
+    span.textContent=data.name.charAt(0).toUpperCase();
   })
 
 
@@ -321,11 +330,23 @@ console.log(uname);
       e.preventDefault();
 
     
-    localStorage.removeItem("username");
+   
     localStorage.removeItem("token");
     window.location.href="/";
     });
   });
+  
+});
+
+
+
+
+
+
+
+  
+
+  
 
 
 </script>

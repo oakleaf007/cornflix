@@ -67,10 +67,10 @@
         <nav>
             
             <ul class="nav">
-               <li><a href="signin.html">Sign in</a></li>
+               <!-- <li><a href="signin.html">Sign in</a></li>
                 
-                <li><a href="signup.html">Sign up</a></li>
-                <li><a href="home.html">Home</a></li>
+                <li><a href="signup.html">Sign up</a></li> -->
+                <li class="to-home"><a class="home-link" href="#">Home</a></li>
                 
             </ul>
                <div class="ham" id="hamburger">
@@ -81,10 +81,10 @@
             </div>
 
              <ul class="nav2">
-               <div class="list" > <a href="signin.html">Sign in</a></div>
+               <!-- <div class="list" > <a href="/signin">Sign in</a></div> -->
                 
-                <div class="list"><a href="signup.html">Sign up</a></div>
-                 <div class="list"><a href="index.html">Home</a></div>
+                <!-- <div class="list"><a hre    f="/signup">Sign up</a></div> -->
+             <div class="list" class="to-home"><a class="home-link" href="#">Home</a></div>
                 <div class="list"> 
                     <button id="genr2" class="genre2">Genres <span class="arrow">&#10095;</span></button>
                 </div> 
@@ -211,7 +211,37 @@
         </div>
    
   </footer>
+<script>
 
+document.addEventListener("DOMContentLoaded", async()=>{
+  const token2 = localStorage.getItem("token");
+  const toHome = document.querySelectorAll(".to-home");
+const homeLink = document.querySelectorAll(".home-link");
+
+  toHome.forEach(btn=>{
+if(token2){
+   homeLink.forEach(link=>{
+    link.href="/home";
+   });
+  }
+  else{
+       homeLink.forEach(link=>{
+    link.href="/";
+   });
+  }
+
+  });
+  
+ 
+
+
+  
+});
+
+
+
+
+</script>
   <script src="contactupdate.js"></script>
   <script src="helpQA.js"></script>
 

@@ -63,7 +63,7 @@ export const signin = async(req,res)=>{
         }
 
         
-        const token = jwt.sign( {id: user._id, email: user.email},
+        const token = jwt.sign( {id: user._id, email: user.email, name : user.name},
             process.env.JWT_SECRET || "dinosaur",
          {expiresIn: "1h"});
 
@@ -79,4 +79,14 @@ export const signin = async(req,res)=>{
 
     }
     
+};
+
+export const getProfile =async(req,res)=>{
+
+    res.json({
+        message: "profile loaded",
+        id:req.user.id,
+        email:req.user.email,
+        name: req.user.name
+    });
 };

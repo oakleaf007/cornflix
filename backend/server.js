@@ -27,6 +27,9 @@ import adminloginroute from "./router/adminloginrouter.js";
 import userRoute from "./router/userRoute.js";
 
 
+import userProfile from "./router/userProfile.js";
+
+
 dotenv.config();
 
 const app = express();
@@ -67,6 +70,8 @@ app.use("/api/postmovie",uploadMovieRoute);
 app.use("/api/adminlogin", adminloginroute);
 
 app.use("/api/sign", userRoute);
+
+app.use("/api/userProfile",userProfile)
 
 
 // serving webpages

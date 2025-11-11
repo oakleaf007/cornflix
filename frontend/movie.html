@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./loader.css">
     <link rel="stylesheet" href="./movie.css">
     <title>CORN FLIX</title>
 </head>
 <body>
-   
+     <div id="loader">
+      <div class="spin"></div>
+   </div>
     <header>
         <div class="logo" >CORN FLIX</div>
 
@@ -96,7 +99,7 @@
 <!-- Welcome -->
 <div class="video-player">
 
-    <div class="video-box">
+    <div class="video-box" id="vid-box">
 <video controls id="vid" controls >
     <source id="sourceid" src="#" type="video/mp4">
   
@@ -215,8 +218,26 @@
         </div>
    
   </footer>
+<script>
 
+document.addEventListener("DOMContentLoaded", async()=>{
+  const token = localStorage.getItem("token");
+  const msg=document.getElementById("overlay2");
+  msg.style.color="#fff";
+  msg.style.fontSize="16px";
+  if(!token) {
+
+    msg.textContent="Please login to watch , redirecting....";
+    setTimeout(()=>{
+      window.location.href="/signin";
+    },3000)
+  }
+  })
+
+
+</script>
   <script src="contactupdate.js"></script>
+  <script src="loader.js"></script>
 
     <script src="hamburger.js"></script>
     <script src="play.js"></script>
