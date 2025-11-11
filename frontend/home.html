@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./home.css">
     <link rel="stylesheet" href="./loader.css">
+    <link rel="icon" type="image/svg" href="./favicon.svg" sizes="64x64">
     <title>CORN FLIX</title>
 </head>
 <body>
@@ -308,16 +309,17 @@ document.addEventListener("DOMContentLoaded", async()=>{
 
   const res = await fetch("/api/userProfile/profile",{
     headers:{Authorization: "Bearer "+token}
-  })
+  });
 
 
-// if(!res.ok){
-//   localStorage.removeItem("token");
-//   return window.location.href="/signin";
-// }
+if(!res.ok){
+  localStorage.removeItem("token");
+  return window.location.href="/signin";
+  return;
+}
 
 const data = await res.json();
-console.log(data);
+
 const user =document.querySelectorAll(".user");
 
   user.forEach(span=>{

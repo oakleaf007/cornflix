@@ -1,0 +1,20 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="48" fill="#0B5A32"/>
+  <g transform="translate(78,60)">
+    <path d="M20 140 L0 40 L80 40 L60 140 Z"
+          fill="#E74C3C"
+          stroke="#4A1E0F"
+          stroke-width="4"/>
+    <rect x="12" y="40" width="12" height="100" fill="#F7D7A3"/>
+    <rect x="36" y="40" width="12" height="100" fill="#F7D7A3"/>
+    <rect x="60" y="40" width="12" height="100" fill="#F7D7A3"/>
+    <circle cx="20" cy="40" r="20" fill="#FCE9B6" stroke="#4A1E0F" stroke-width="3"/>
+    <circle cx="45" cy="35" r="22" fill="#FCE9B6" stroke="#4A1E0F" stroke-width="3"/>
+    <circle cx="65" cy="45" r="18" fill="#FCE9B6" stroke="#4A1E0F" stroke-width="3"/>
+  </g>
+  <text x="50%" y="225" font-size="44" font-weight="700"
+        text-anchor="middle" fill="white"
+        font-family="Arial, sans-serif">
+    CORNFLIX
+  </text>
+</svg>
