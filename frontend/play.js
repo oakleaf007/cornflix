@@ -21,7 +21,7 @@ play.classList.add("active");
 
 // movie loading from backend
 async function loadMovie() {
-
+const msg=document.getElementById("overlay2");
   const url = new URLSearchParams(window.location.search);
   const movieId = url.get('id');
   const token = localStorage.getItem("token");
@@ -38,7 +38,19 @@ async function loadMovie() {
     
     if(res.status === 401 || res.status === 403){
       localStorage.removeItem("token");
-      window.location.replace("/signin");
+
+        
+     msg.style.color="#fff";
+     msg.style.fontSize="16px";
+ 
+    msg.textContent="Please login to watch , redirecting....";
+
+
+
+    setTimeout(()=>{
+       window.location.replace("/signin");
+    },3000)
+     
       return;
     }
 

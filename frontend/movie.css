@@ -3,7 +3,7 @@
 }
 
 .video-player{
-    max-width:95%;
+    width:95%;
     margin: 10px auto;
     
     padding: 10px;
@@ -12,7 +12,8 @@
 
 }
 .video-box{
- 
+  margin: 0 auto;
+ max-width: 600px;
     margin-bottom: 20px;
     border-radius: 4px;
     overflow: hidden;
