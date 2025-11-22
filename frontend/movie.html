@@ -218,20 +218,25 @@
         </div>
    
   </footer>
+
+  <!-- Auth verification -->
 <script>
 
 document.addEventListener("DOMContentLoaded", async()=>{
   const token = localStorage.getItem("token");
+  console.log(token);
   const msg=document.getElementById("overlay2");
   msg.style.color="#fff";
   msg.style.fontSize="16px";
-  if(!token) {
+  if(!token || token.trim()==="" || token === "null" || token === "undefined") {
 
     msg.textContent="Please login to watch , redirecting....";
     setTimeout(()=>{
       window.location.href="/signin";
-    },3000)
+    },3000);
+    return;
   }
+
   })
 
 

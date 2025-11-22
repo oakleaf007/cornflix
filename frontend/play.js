@@ -34,8 +34,16 @@ async function loadMovie() {
         Authorization: "Bearer " + token
       }
     });
-    if(!res.ok) throw new Error("Movie not found");
 
+    
+    if(res.status === 401 || res.status === 403){
+      localStorage.removeItem("token");
+      window.location.replace("/signin");
+      return;
+    }
+
+    if(!res.ok) throw new Error("Movie not found");
+    
     const movie = await res.json();
 
     const title= document.getElementById("movie-title");
