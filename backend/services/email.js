@@ -18,7 +18,7 @@ const res = await fetch ("https://api.brevo.com/v3/smtp/email",{
     method: "POST",
     headers:{
         "accept": "application/json",
-        'api-key':"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",
+        'api-key':process.env.BREVO_API,
         "content-type": "application/json"
     },
     body: JSON.stringify(data)
