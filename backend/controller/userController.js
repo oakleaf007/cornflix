@@ -1,7 +1,9 @@
 import User from "../models/user.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import sendOtp from "../services/email.js";
 
+import crypto from "crypto";
 
 // signup for new user
 export const signup =async(req, res)=>{
@@ -81,6 +83,39 @@ export const signin = async(req,res)=>{
     
 };
 
+// sending otp
+
+export const sendOtpController= async(req, res)=>{
+    try{
+
+  
+    const {email}= req.body;
+
+    const user = await User.findOne({email});
+    if(!user){
+        return res.status(404).json({message:"user not found"});
+    }
+    const otp = crypto.randomInt(100000, 999999).toString();
+    user.otp = otp;
+    user.otpExpires = Date.now()+5*60*1000;
+    await user.save();
+
+    await sendOtp(email,otp);
+    res.json ({message: "OTP sent"});
+
+}
+  
+catch(err){
+    console.error("error during sending otp", err);
+    res.status(500).json({message: "server error"});
+}
+};
+
+
+
+
+
+// getprofile for frontend
 export const getProfile =async(req,res)=>{
 
     res.json({

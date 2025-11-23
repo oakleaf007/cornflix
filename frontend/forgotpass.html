@@ -47,13 +47,24 @@
 <div class="update-container">
     <form id="form" >
 <h4>Enter your E-mail</h4>
-<input type="email" id="email" required>
+<input type="email" id="email"   placeholder="Enter Email" required>
+<div id="msg" style="padding: 5px;">x</div>
+
+<br>
 
 
-<br><br>
+<button type="submit" id="sendotp">Send otp</button>
+</form>
+
+    <form id="form2" >
+<h4>Enter OTP</h4>
+<input type="text" maxlength="6" inputmode="numeric" pattern="\d{6}" id="otp"  autocomplete="one-time-code"  placeholder="Enter OTP" required>
+<div id="msg" style="padding: 5px;">x</div>
+
+<br>
 
 
-<button type="submit" id="btn">Send reset password link</button>
+<button type="submit" id="sendotp2">Verify</button>
 </form>
 </div>
 </main>
@@ -71,7 +82,7 @@
 
   
 
-    <script src=""></script>
+    <script src="forgot.js"></script>
   
     </body>
 </html>

@@ -15,7 +15,7 @@ input{
     max-width: 400px;
     padding: 10px;
 }
-#btn{
+#sendotp{
     cursor: pointer;
     background-color: #0a3a64;
     border-radius: 5px;
@@ -25,9 +25,28 @@ input{
     padding: 10px;
     transition: all 0.3s ease;
 }
-#btn:hover{
+#sendotp:hover{
     background-color: lightslategray;
 }
+
+
+#sendotp2{
+    cursor: pointer;
+    background-color: #0a3a64;
+    border-radius: 5px;
+    border: none;
+   color: #fff;
+    margin: 10px auto;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+#sendotp2:hover{
+    background-color: lightslategray;
+}
+
+
+
+
 h4{
     font-size: 16px;
 }

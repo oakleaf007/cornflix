@@ -5,7 +5,11 @@ const user = new mongoose.Schema({
     name: {type:String},
     gender: {type: String},
     pass: { type: String, required: true},
-    confirm: { type: String}
+    confirm: { type: String},
+
+
+    otp:{type: String},
+    optExpires: {type:Date}
 
 });
 const User = mongoose.model("User",user);

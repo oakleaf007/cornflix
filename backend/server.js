@@ -105,6 +105,9 @@ app.use("/",express.static("frontend"));
  app.get("/signup", (req, res) => {
   res.sendFile(path.join(process.cwd(), "frontend","signup.html"));
 });
+app.get("/forgot", (req, res)=>{
+  res.sendFile(path.join(process.cwd(), "frontend", "forgotpass.html"));
+});
 
 // admin serving
 
