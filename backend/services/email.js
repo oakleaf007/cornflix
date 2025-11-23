@@ -4,8 +4,8 @@ async function sendOtp(email, otp){
    
 const data = {
     sender:{
-        name: "cornflix",
-        email: "jjjbbbb736@gmail.com"
+        name:process.env.BREVO_NAME,
+        email: process.env.BREVO_EMAIL
 
     },
     to:[{email}],
@@ -14,11 +14,11 @@ const data = {
         <h1 style = "color:blue;">${otp}</h1>
         <p>This will expire in 5 minutes</p>`
 };
-const res = await fetch ("https://api.brevo.com/v3/smtp/email",{
+const res = await fetch (process.env.BREVO_API,{
     method: "POST",
     headers:{
         "accept": "application/json",
-        'api-key':process.env.BREVO_API,
+        'api-key':process.env.BREVO_API_KEY,
         "content-type": "application/json"
     },
     body: JSON.stringify(data)
