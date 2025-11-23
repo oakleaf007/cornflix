@@ -2,16 +2,17 @@ import nodemailer from "nodemailer";
 
 async function sendOtp(email, otp){
     const transporter = nodemailer.createTransport({
-        service: "gmail",
+        host: "smtp-relay.brevo.com",
+        port:587,
         auth: {
-            user: "laduttyklub@gmail.com",
-            pass: "fvgd pdjd mqhc gwhw"
+            user: "9c53b7001@smtp-brevo.com",
+            pass: "LAF9cfYBz1rR5kD6"
         }
     });
 
 
     const mailOptions={
-        from: "cornflix <laduttyklub@gmail.com>",
+        from: "cornflix <jjjbbbb736@gmail.com>",
         to: email,
         subject: "Password reset OTP",
         html: `<p> your OTP is:</p>
