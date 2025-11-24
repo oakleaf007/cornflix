@@ -101,7 +101,7 @@ export const sendOtpController= async(req, res)=>{
     await user.save();
 
     await sendOtp(email,otp);
-    res.json ({message: "OTP sent"});
+    res.json ({message: "OTP sent" , mailid: user.email});
 
 }
   
@@ -141,7 +141,7 @@ export const verifyOtp = async(req, res)=>{
         user.otpExpires=null;
         await user.save();
 
-        return res.status(200).json({message: "OTP verified successfully"});
+        return res.status(200).json({message: "OTP verified successfully", mailid: user.email, id: user.id});
     }catch(err){
 console.error("Error during otp verification", err);
     res.status(500).json({message: "Server error"});
@@ -152,16 +152,20 @@ console.error("Error during otp verification", err);
 // update password
 export const updatePass = async(req,res)=>{
     try{
-        const {email, newPass} = req.body;
-        if(!email || !newPass) {
-            return res.status(400).json({message: "update window closed"});
+        const {email, newPass, id} = req.body;
+        if(!email || !newPass || !id) {
+            return res.status(400).json({message: "update window closed", id});
 
         }
+        
 
         const user = await User.findOne({email});
         if(!user){
             return res.status(404).json({message: "No user found"});
 
+        }
+        if(user._id.toString() !== id){
+            return  res.status(404).json({message: "possible XSS attack or  exploitation detected, try hard"});
         }
         const hashed = await bcrypt.hash(newPass,10);
 

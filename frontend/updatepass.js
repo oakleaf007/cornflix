@@ -7,41 +7,52 @@ let timer = document.getElementById("timer");
 
 
 
+ const token = localStorage.getItem("tokenx");
+    const email = localStorage.getItem("email");
 
-const session = { email: localStorage.getItem("email"),
-token:localStorage.getItem("token")};
 
-console.log(session.email,session.token);
-
-const { email, token} = session;
 
 if(!email || !token){
         passwd.disabled=true;
 confPass.disabled=true;
-msg.textContent="Time is up! Update window is closed, try again with another otp verification.";
+localStorage.removeItem("email");
+msg.textContent="Time is up or Update window is closed, try again with another otp verification.";
 }
 
 let sec =120;
 
-const interval = setInterval(() => {
-    sec--;
-    timer.textContent=`Time remaining: ${sec} s`;
-}, 1000);
+// const interval = setInterval(() => {
+//     sec--;
+//     timer.textContent=`Time remaining: ${sec} s`;
+// }, 1000);
 
 
-setTimeout(()=>{
-localStorage.removeItem("token");
-localStorage.removeItem("email");
- clearInterval(interval);
-window.location.reload();
+// setTimeout(()=>{
+// localStorage.removeItem("token");
+// localStorage.removeItem("email");
+//  clearInterval(interval);
+// window.location.reload();
 
 
-},120000)
+// },120000)
 
 
 form.addEventListener("submit", async(e)=>{
     e.preventDefault();
+
+
     const newPass = document.getElementById("passwd").value.trim();
+const email = localStorage.getItem("email");
+const token = localStorage.getItem("tokenx");
+
+if(!email || !token){
+        passwd.disabled=true;
+confPass.disabled=true;
+msg.style.color="red";
+msg.textContent="Time is up or Update window is closed, try again with another otp verification.";
+return;
+}
+
 if(!newPass){
     msg.style.color="red";
     msg.textContent="Please Enter password";
@@ -54,16 +65,20 @@ if(newPass.value !== confPass.value){
     return;
   
 }
+
+
+
+
 msg.style.color="green";
 msg.textContent="updating...";
-const email = localStorage.getItem("email");
+
  
 try{
     
     const res = await fetch ("/api/sign/updatepass",{
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({email, newPass})
+        body: JSON.stringify({email, newPass,id: token})
     });
 
     const data= await res.json();
@@ -71,7 +86,7 @@ try{
     if(res.ok){
          msg.style.color="green";
     msg.textContent=data.message + ", Redirecting to signin...";
-    localStorage.removeItem("token");
+    localStorage.removeItem("tokenx");
     localStorage.removeItem("email");
     setTimeout(()=>{
         
@@ -82,6 +97,7 @@ try{
     }else{
           msg.style.color="red";
     msg.textContent=data.message;
+  
 
 
     }
@@ -97,4 +113,3 @@ try{
 
 
 
-const submitBtn= document.getElementById("submitbtn");

@@ -34,8 +34,11 @@ msg.style.color="green";
     if(res.ok){
        msg.style.color="green";
        msg.textContent=data.message;
-       localStorage.setItem("email",email);
+       localStorage.setItem("email",data.mailid);
       
+    
+    
+
 
     }else{
          msg.style.color="red";
@@ -77,12 +80,13 @@ try{
   if(res.ok){
   msg2.style.color="green";
    msg2.textContent=data.message + ", Redirecting...";
-
-  const token= Math.floor(Math.random()*100000).toString();
+ const token= Math.floor(100000+Math.random()*900000).toString();
     
-    localStorage.setItem("token",token);
-    localStorage.setItem("email",email);
-     console.log(token,email);
+    localStorage.setItem("tokenx", data.id);
+      
+   
+    localStorage.setItem("email",data.mailid);
+    
      setTimeout(()=>{
  window.location.href="/updatepass";
      },2000)
