@@ -21,20 +21,20 @@ msg.textContent="Time is up or Update window is closed, try again with another o
 
 let sec =120;
 
-// const interval = setInterval(() => {
-//     sec--;
-//     timer.textContent=`Time remaining: ${sec} s`;
-// }, 1000);
+const interval = setInterval(() => {
+    sec--;
+    timer.textContent=`Time remaining: ${sec} s`;
+}, 1000);
 
 
-// setTimeout(()=>{
-// localStorage.removeItem("token");
-// localStorage.removeItem("email");
-//  clearInterval(interval);
-// window.location.reload();
+setTimeout(()=>{
+localStorage.removeItem("token");
+localStorage.removeItem("email");
+ clearInterval(interval);
+window.location.reload();
 
 
-// },120000)
+},120000)
 
 
 form.addEventListener("submit", async(e)=>{
