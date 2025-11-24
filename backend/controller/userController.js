@@ -149,6 +149,39 @@ console.error("Error during otp verification", err);
 
 };
 
+// update password
+export const updatePass = async(req,res)=>{
+    try{
+        const {email, newPass} = req.body;
+        if(!email || !newPass) {
+            return res.status(400).json({message: "no Email provided"});
+
+        }
+
+        const user = await User.findOne({email});
+        if(!user){
+            return res.status(404).json({message: "No user found"});
+
+        }
+        const hashed = await bcrypt.hash(newPass,10);
+
+        user.pass = hashed;
+        await user.save();
+
+        if(user.otp){
+            user.otp = undefined;
+            user.otpExpires= undefined;
+            await user.save();
+        }
+        return res.status(200).json({message: "Password updated successfully"});
+
+    }catch(err){
+        console.error(err);
+        return res.status(500).json({message: "Internal Server error"})
+
+    }
+}
+
 
 // getprofile for frontend
 export const getProfile =async(req,res)=>{

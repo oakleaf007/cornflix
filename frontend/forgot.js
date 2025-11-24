@@ -7,7 +7,7 @@ const msg = document.getElementById("msg");
 
 btn.addEventListener("click", async(e)=>{
     e.preventDefault();
-
+msg.style.color="green";
     const email = document.getElementById("email").value.trim();
 
 
@@ -86,6 +86,7 @@ try{
      setTimeout(()=>{
  window.location.href="/updatepass";
      },2000)
+    
    
 
   }
