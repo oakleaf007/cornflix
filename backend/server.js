@@ -109,6 +109,11 @@ app.get("/forgot", (req, res)=>{
   res.sendFile(path.join(process.cwd(), "frontend", "forgotpass.html"));
 });
 
+
+app.get("/updatepass", (req, res)=>{
+  res.sendFile(path.join(process.cwd(), "frontend", "updatepass.html"));
+});
+
 // admin serving
 
 app.use("/adminx", express.static(path.join(process.cwd(), "admin")));

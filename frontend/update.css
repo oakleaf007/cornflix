@@ -46,6 +46,20 @@ input{
 
 
 
+#submitbtn{
+    cursor: pointer;
+    background-color: #0a3a64;
+    border-radius: 5px;
+    border: none;
+   color: #fff;
+    margin: 10px auto;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+#submitbtn:hover{
+    background-color: lightslategray;
+}
+
 
 h4{
     font-size: 16px;

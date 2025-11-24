@@ -111,8 +111,43 @@ catch(err){
 }
 };
 
+// verify otp and proceed to update 
+export const verifyOtp = async(req, res)=>{
 
+    try{
 
+        const {email ,otp} = req.body;
+
+        if(!otp || !email){
+            return res.status(400).json({
+
+            message: "Please provide otp"
+            })
+        }
+        const user = await User.findOne({email});
+        if(!user){
+            return res.status(404).json({message: "user not found"});
+
+        }
+
+        if(!user.otpExpires || user.otpExpires<Date.now()){
+            return res.status(400).json({ message: "otp expired"});
+        }
+
+        if(user.otp !==otp){
+            return res.status(400).json({message: "Invalid OTP"});
+        }
+        user.otp = null;
+        user.otpExpires=null;
+        await user.save();
+
+        return res.status(200).json({message: "OTP verified successfully"});
+    }catch(err){
+console.error("Error during otp verification", err);
+    res.status(500).json({message: "Server error"});
+    }
+
+};
 
 
 // getprofile for frontend

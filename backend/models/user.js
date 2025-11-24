@@ -9,7 +9,7 @@ const user = new mongoose.Schema({
 
 
     otp:{type: String},
-    optExpires: {type:Date}
+    otpExpires: {type:Date}
 
 });
 const User = mongoose.model("User",user);

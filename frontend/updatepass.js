@@ -5,6 +5,19 @@ const confPass = document.getElementById("conf-passwd");
 let msg = document.getElementById("msg");
 
 
+const email = localStorage.getItem("email");
+const token = localStorage.getItem("token");
+
+console.log(email,token);
+
+
+if(!email || !token){
+        passwd.disabled=true;
+confPass.disabled=true;
+msg.textContent="Congrates, You successfully get Into the update password field, now what? try enterring your mum's number";
+}
+
+
 
 form.addEventListener("submit", function(e){
     e.preventDefault();
@@ -22,3 +35,6 @@ else{
 }
 });
 
+
+
+const submitBtn= document.getElementById("submitbtn");
