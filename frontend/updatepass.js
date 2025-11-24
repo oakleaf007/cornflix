@@ -13,29 +13,30 @@ token:localStorage.getItem("token")};
 
 console.log(session.email,session.token);
 
+const { email, token} = session;
 
-if(!session.email || !session.token){
+if(!email || !token){
         passwd.disabled=true;
 confPass.disabled=true;
-msg.textContent="Time is over! Update window is closed, try again with another otp verification.The window will still keep reloading if you stay.";
+msg.textContent="Time is up! Update window is closed, try again with another otp verification.";
 }
 
-// let sec =60;
+let sec =120;
 
-// const interval = setInterval(() => {
-//     sec--;
-//     timer.textContent=`Time remaining: ${sec}`;
-// }, 1000);
-
-
-// setTimeout(()=>{
-// localStorage.removeItem("token");
-// localStorage.removeItem("email");
-//  clearInterval(interval);
-// window.location.reload();
+const interval = setInterval(() => {
+    sec--;
+    timer.textContent=`Time remaining: ${sec} s`;
+}, 1000);
 
 
-// },60000)
+setTimeout(()=>{
+localStorage.removeItem("token");
+localStorage.removeItem("email");
+ clearInterval(interval);
+window.location.reload();
+
+
+},120000)
 
 
 form.addEventListener("submit", async(e)=>{
@@ -53,10 +54,12 @@ if(newPass.value !== confPass.value){
     return;
   
 }
-const {email} = session;
-
+msg.style.color="green";
+msg.textContent="updating...";
+const email = localStorage.getItem("email");
+ 
 try{
-
+    
     const res = await fetch ("/api/sign/updatepass",{
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -67,7 +70,13 @@ try{
 
     if(res.ok){
          msg.style.color="green";
-    msg.textContent=data.message;
+    msg.textContent=data.message + ", Redirecting to signin...";
+    localStorage.removeItem("token");
+    localStorage.removeItem("email");
+    setTimeout(()=>{
+        
+        window.location.href="/signin";
+    },3000)
 
     
     }else{

@@ -76,7 +76,7 @@ try{
   const data = await res.json();
   if(res.ok){
   msg2.style.color="green";
-   msg2.textContent=data.message;
+   msg2.textContent=data.message + ", Redirecting...";
 
   const token= Math.floor(Math.random()*100000).toString();
     

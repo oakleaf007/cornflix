@@ -154,7 +154,7 @@ export const updatePass = async(req,res)=>{
     try{
         const {email, newPass} = req.body;
         if(!email || !newPass) {
-            return res.status(400).json({message: "no Email provided"});
+            return res.status(400).json({message: "update window closed"});
 
         }
 
