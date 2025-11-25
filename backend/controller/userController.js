@@ -121,7 +121,7 @@ export const verifyOtp = async(req, res)=>{
         if(!otp || !email){
             return res.status(400).json({
 
-            message: "Please provide otp"
+            message: "Invalid OTP or Invalid body recieved"
             })
         }
         const user = await User.findOne({email});
