@@ -1,6 +1,9 @@
 # 🎬 Corn Flix
 
-**Corn Flix** is a dynamic web application inspired by modern movie streaming platforms. It provides users with an interactive interface to browse movie and watch while allowing the admin to manage all site content efficiently through a secure admin panel.
+**Corn Flix** is a dynamic movie-streaming style web application built with **Node.js**, **Express.js**, **MongoDB**, and **Cloudinary** cdn.  
+It offers users an interactive interface to browse and watch movies, while providing a secure **admin panel** for managing all site content efficiently.
+
+Designed to resemble modern streaming platforms, Corn Flix delivers a smooth, responsive, and immersive viewing experience.
 
 ---
 
