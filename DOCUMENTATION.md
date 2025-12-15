@@ -8,15 +8,17 @@
 
 ## 🏗 System Architecture
 
-Client (Browser)
-   │
-   │ HTTP (REST APIs)
-   ▼
-Express Server (Node.js)
-   │
-   │ Cloudinary
-   ▼
-MongoDB Database
+      Client (Browser)
+   
+      │
+      │ HTTP (REST APIs)
+      ▼
+      Express Server (Node.js)
+   
+      │
+      │ Cloudinary
+      ▼
+      MongoDB Database
 
 ---
 
@@ -53,53 +55,49 @@ NOTE: Environment variables should never be committed to version control.
 ## 🗄 Database Design
 
 ### User Collection
-{
-  email: { type: String, required: true },
-  name: { type: String },
-  gender: { type: String },
-  pass: { type: String, required: true },
-  confirm: { type: String },
-
-  otp: { type: String },
-  otpExpires: { type: Date }
-}
-
----
-
-### Message Collection
-{
-  userId: { type: String, required: true },
-  userName: { type: String, required: true, default: "unknown" },
-  activeChat: { type: String, required: true },
-  userChat: { type: String },
-  contactChat: { type: String },
-  timestamp: { type: Date, default: Date.now }
-}
+      {
+      
+        email: { type: String, required: true },
+        
+        name: { type: String },
+        
+        gender: { type: String },
+        
+        pass: { type: String, required: true },
+        
+        confirm: { type: String },
+        
+        otp: { type: String },
+        
+        otpExpires: { type: Date }
+      }
 
 ---
+
 
 ### QNA Collection
-{
-  question: { type: String, required: true },
-  answer: { type: String, default: "" },
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now }
-}
-// timestamps enabled
+      {
+      
+        question: { type: String, required: true },
+        answer: { type: String, default: "" },
+        createdAt: { type: Date, default: Date.now },
+        updatedAt: { type: Date, default: Date.now }
+      }
+      // timestamps enabled
 
 ---
 
 ## 🔗 API Endpoints
 
 ### User & Authentication APIs
-POST   /site/api/sign/signin  
-POST   /site/api/sign/signup  
-POST   /site/api/sign/sendotp  
-GET    /site/api/sign/getotp  
-POST   /site/api/sign/updatepass  
+      POST   /site/api/sign/signin  
+      POST   /site/api/sign/signup  
+      POST   /site/api/sign/sendotp  
+      GET    /site/api/sign/getotp  
+      POST   /site/api/sign/updatepass  
 
 ### QNA / Content APIs
-GET    /site/api/questions/
+      GET    /site/api/questions/
 
 NOTE:
 Check server file or routes folder for all routes and admin APIs.
@@ -108,10 +106,10 @@ Check server file or routes folder for all routes and admin APIs.
 
 ## ⚡ Setup & Installation
 
-git clone https://github.com/oakleaf007/cornflix.git  
-cd cornflix  
-npm install  
-npm run dev  
+      git clone https://github.com/oakleaf007/cornflix.git  
+      cd cornflix  
+      npm install  
+      npm run dev  
 
 Server runs at:
 http://localhost:5000
